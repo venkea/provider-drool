@@ -15,7 +15,7 @@ end
 rule "Valid provider speciality"
   dialect "mvel"
   when
-	$provider: Provider(Integer.parseInt(providerSpecialityCode) > 00 , Integer.parseInt(providerSpecialityCode)< 99, providerType != "INDV")
+	$provider: Provider(Integer.parseInt(providerSpecialityCode) > 00 , Integer.parseInt(providerSpecialityCode)< 99, provType != "INDV")
   then
     $provider.setStatus(Validation.FAILED);
 end
@@ -23,7 +23,7 @@ end
 rule "Valid provider speciality code"
     dialect "mvel"
   when
-	$provider: Provider(Integer.parseInt(providerSpecialityCode) >99 , providerType == "INDV")
+	$provider: Provider(Integer.parseInt(providerSpecialityCode) >99 , provType == "INDV")
   then
     $provider.setStatus(Validation.FAILED);
 end
@@ -31,7 +31,7 @@ end
 rule "Valid provider-speciality code"
     dialect "mvel"
   when
-	$provider: Provider(Integer.parseInt(providerSpecialityCode) ==00 , providerType == "INDV")
+	$provider: Provider(Integer.parseInt(providerSpecialityCode) ==00 , provType == "INDV")
   then
     $provider.setStatus(Validation.FAILED);
 end
@@ -50,4 +50,12 @@ rule "prov-speciality code2"
 	$provider: Provider(providerSpecialityCode != "17")
   then
     $provider.setStatus(Validation.FAILED);
+end
+
+rule "Final Rule"
+    dialect "mvel"
+  when
+	$provider: Provider(status == Validation.UNKNOWN)
+  then
+    $provider.setStatus(Validation.PASSED);
 end
