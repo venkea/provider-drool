@@ -3,7 +3,7 @@
 <kmodule
   xmlns="http://www.drools.org/xsd/kmodule">
 
-  <kbase packages="com.hcsc.provider.drools.main.drl">
+  <kbase packages="ProviderValidation">
     <ksession name="StatelessProviderValidation" type="stateless"/>
   </kbase>
 
