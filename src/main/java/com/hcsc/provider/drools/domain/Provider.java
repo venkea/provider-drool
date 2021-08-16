@@ -1,192 +1,300 @@
-
 package com.hcsc.provider.drools.domain;
 
 import java.util.Date;
 
 public class Provider {
 
-  private Integer providerId;
-  private String provType;
-  private String providerFirstName;
-  private String providerLastName;
-  private String taxId;
-  private String dealId;
-  private String npi;
-  private String ssn;
-  private String ein;
-  private Date licenseExpiryDate;
-  private Date provEffectiveDate;
-  private String licenseState;
-  private String licenseNumber;
-  private String addressType;
-  private String addressLine1;
-  private String addressLine2;
-  private String state;
-  private String city;
-  private String region;
-  private String zipCode;
-  private String phoneNumber;
-  private String emailId;
-  private String providerSpecialityCode;
-  private String providerPracticeSet;
-  private String product;
-  private String provEffectiveStatus;
-  private Validation status = Validation.UNKNOWN;
+	private Integer providerId;
 
-  public Provider() {
-  }
+	private String providerFirstName;
 
-  public String getProvType() {
-    return provType;
-  }
-  public String getProviderFirstName() {
-    return providerFirstName;
-  }
-  public String getProviderLastName() {
-    return providerLastName;
-  }
-  public Integer getProviderId() {
-    return providerId;
-  }
-  public String getTaxId() {
-    return taxId;
-  }
-  public String getDealId() {
-    return dealId;
-  }
-  public String getNpi() { return npi;  }
-  public String getSsn() {
-    return ssn;
-  }
-  public String getEin() {
-    return ein;
-  }
-  public Date getLicenseExpiryDate() {
-    return licenseExpiryDate;
-  }
-  public Date getProvEffectiveDate() {
-    return provEffectiveDate;
-  }
-  public String getState() {
-    return state;
-  }
-  public String getCity() {
-    return city;
-  }
-  public String getRegion() {
-    return region;
-  }
-  public String getEmailId() {
-    return emailId;
-  }
-  public String getAddressType() {
-    return addressType;
-  }
-  public String getPhoneNumber() {
-    return phoneNumber;
-  }
-  public String getProduct() {
-    return product;
-  }
-  public String getProvEffectiveStatus() {
-    return provEffectiveStatus;
-  }
-  public String getProviderPracticeSet() {
-    return providerPracticeSet;
-  }
-  public String getLicenseState() {
-    return licenseState;
-  }
-  public String getLicenseNumber() {
-    return licenseNumber;
-  }
-  public String getProviderSpecialityCode() {
-    return providerSpecialityCode;
-  }
-  public String getAddressLine1() {
-    return addressLine1;
-  }
-  public String getAddressLine2() {
-    return addressLine2;
-  }
-  public String getZipCode() {
-    return zipCode;
-  }
-  public Validation getStatus() {
-    return status;
-  }
+	private String providerLastName;
 
+	private String addressType;
 
+	private String addressLine1;
 
+	private String addressLine2;
+	
+	private String city;
+	
+	private String state;
 
+	private String region;
 
-  public void setProvType(String providerType) {
-    this.provType = provType;
-  }
-  public void setProviderFirstName(String providerFirstName) {
-    this.providerFirstName = providerFirstName;
-  }
-  public void setProviderLastName(String providerLastName) {
-    this.providerLastName = providerLastName;
-  }
-  public void setProviderId(Integer providerId) {
-    this.providerId = providerId;
-  }
-  public void setTaxId(String taxId) {
-    this.taxId = taxId;
-  }
-  public void setDealId(String dealId) {
-    this.dealId = dealId;
-  }
-  public void setNpi(String npi) {    this.npi = npi;  }
-  public void setEin(String ein) {    this.ein = ein;  }
-  public void setEmailId(String emailId) {    this.emailId = emailId;  }
-  public void setSsn(String ssn) {
-    this.ssn = ssn;
-  }
-  public void setLicenseExpiryDate(Date licenseExpiryDate) {
-    this.licenseExpiryDate = licenseExpiryDate;
-  }
-  public void setProvEffectiveDate(Date provEffectiveDate) {
-    this.provEffectiveDate = provEffectiveDate;
-  }
-  public void setState(String state) {
-    this.state = state;
-  }
-  public void setCity(String city) {this.city = city;}
-  public void setRegion(String region) {
-    this.region = region;
-  }
-  public void setProviderSpecialityCode(String providerSpecialityCode) {    this.providerSpecialityCode = providerSpecialityCode; }
-  public void setAddressLine1(String addressLine1) {
-    this.addressLine1 = addressLine1;
-  }
-  public void setAddressLine2(String addressLine2) {
-    this.addressLine2 = addressLine2;
-  }
-  public void setAddressType(String addressType) {
-    this.addressType = addressType;
-  }
-  public void setZipCode(String zipCode) {
-    this.zipCode = zipCode;
-  }
-  public void setPhoneNumber(String phoneNumber) {
-    this.phoneNumber = phoneNumber;
-  }
-  public void setProduct(String product) {
-    this.product = product;
-  }
-  public void setProvEffectiveStatus(String provEffectiveStatus) {
-    this.provEffectiveStatus = provEffectiveStatus;
-  }
-  public void setProviderPracticeSet(String providerPracticeSet) {
-    this.providerPracticeSet = providerPracticeSet;
-  }
-  public void setLicenseState(String licenseState) {
-    this.licenseState = licenseState;
-  }
-  public void setLicenseNumber(String licenseNumber) {
-    this.licenseNumber = licenseNumber;
-  }
-  public void setStatus(Validation status) {this.status = status;}
+	private String zipCode;
+	
+	private String phoneNumber;
+
+	private String emailId;
+	
+	private String npi;
+	
+	private String taxId;
+
+	private String deaId;
+
+	private String ssn;
+
+	private String ein;
+
+	private String providerSpecialityCode;
+
+	private String licenceState;
+
+	private String licenceNumber;
+
+	private Date licenseExpiryDate;
+
+	private String providerPracticeState;
+
+	private String product;
+
+	private String provType;
+
+	private Date provEffectiveDate;
+
+	private String provEffectiveStatus;
+
+	private Validation status;
+
+	private String errorDescription;
+
+	public Integer getProviderId() {
+		return providerId;
+	}
+
+	public void setProviderId(Integer providerId) {
+		this.providerId = providerId;
+	}
+
+	public String getProviderFirstName() {
+		return providerFirstName;
+	}
+
+	public void setProviderFirstName(String providerFirstName) {
+		this.providerFirstName = providerFirstName;
+	}
+
+	public String getProviderLastName() {
+		return providerLastName;
+	}
+
+	public void setProviderLastName(String providerLastName) {
+		this.providerLastName = providerLastName;
+	}
+
+	public String getAddressType() {
+		return addressType;
+	}
+
+	public void setAddressType(String addressType) {
+		this.addressType = addressType;
+	}
+
+	public String getAddressLine1() {
+		return addressLine1;
+	}
+
+	public void setAddressLine1(String addressLine1) {
+		this.addressLine1 = addressLine1;
+	}
+
+	public String getAddressLine2() {
+		return addressLine2;
+	}
+
+	public void setAddressLine2(String addressLine2) {
+		this.addressLine2 = addressLine2;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public String getRegion() {
+		return region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+	}
+
+	public String getZipCode() {
+		return zipCode;
+	}
+
+	public void setZipCode(String zipCode) {
+		this.zipCode = zipCode;
+	}
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public String getEmailId() {
+		return emailId;
+	}
+
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
+	}
+
+	public String getNpi() {
+		return npi;
+	}
+
+	public void setNpi(String npi) {
+		this.npi = npi;
+	}
+
+	public String getTaxId() {
+		return taxId;
+	}
+
+	public void setTaxId(String taxId) {
+		this.taxId = taxId;
+	}
+
+	public String getDeaId() {
+		return deaId;
+	}
+
+	public void setDeaId(String deaId) {
+		this.deaId = deaId;
+	}
+
+	public String getSsn() {
+		return ssn;
+	}
+
+	public void setSsn(String ssn) {
+		this.ssn = ssn;
+	}
+
+	public String getEin() {
+		return ein;
+	}
+
+	public void setEin(String ein) {
+		this.ein = ein;
+	}
+
+	public String getProviderSpecialityCode() {
+		return providerSpecialityCode;
+	}
+
+	public void setProviderSpecialityCode(String providerSpecialityCode) {
+		this.providerSpecialityCode = providerSpecialityCode;
+	}
+
+	public String getLicenceState() {
+		return licenceState;
+	}
+
+	public void setLicenceState(String licenceState) {
+		this.licenceState = licenceState;
+	}
+
+	public String getLicenceNumber() {
+		return licenceNumber;
+	}
+
+	public void setLicenceNumber(String licenceNumber) {
+		this.licenceNumber = licenceNumber;
+	}
+
+	public Date getLicenseExpiryDate() {
+		return licenseExpiryDate;
+	}
+
+	public void setLicenseExpiryDate(Date licenseExpiryDate) {
+		this.licenseExpiryDate = licenseExpiryDate;
+	}
+
+	public String getProviderPracticeState() {
+		return providerPracticeState;
+	}
+
+	public void setProviderPracticeState(String providerPracticeState) {
+		this.providerPracticeState = providerPracticeState;
+	}
+
+	public String getProduct() {
+		return product;
+	}
+
+	public void setProduct(String product) {
+		this.product = product;
+	}
+
+	public String getProvType() {
+		return provType;
+	}
+
+	public void setProvType(String provType) {
+		this.provType = provType;
+	}
+
+	public Date getProvEffectiveDate() {
+		return provEffectiveDate;
+	}
+
+	public void setProvEffectiveDate(Date provEffectiveDate) {
+		this.provEffectiveDate = provEffectiveDate;
+	}
+
+	public String getProvEffectiveStatus() {
+		return provEffectiveStatus;
+	}
+
+	public void setProvEffectiveStatus(String provEffectiveStatus) {
+		this.provEffectiveStatus = provEffectiveStatus;
+	}
+
+	public Validation getStatus() {
+		return status;
+	}
+
+	public void setStatus(Validation status) {
+		this.status = status;
+	}
+
+	public String getErrorDescription() {
+		return errorDescription;
+	}
+
+	public void setErrorDescription(String errorDescription) {
+		this.errorDescription = errorDescription;
+	}
+
+	@Override
+	public String toString() {
+		return "Provider [providerId=" + providerId + ", providerFirstName=" + providerFirstName + ", providerLastName="
+				+ providerLastName + ", addressType=" + addressType + ", addressLine1=" + addressLine1
+				+ ", addressLine2=" + addressLine2 + ", city=" + city + ", state=" + state + ", region=" + region
+				+ ", zipCode=" + zipCode + ", phoneNumber=" + phoneNumber + ", emailId=" + emailId + ", npi=" + npi
+				+ ", taxId=" + taxId + ", deaId=" + deaId + ", ssn=" + ssn + ", ein=" + ein
+				+ ", providerSpecialityCode=" + providerSpecialityCode + ", licenceState=" + licenceState
+				+ ", licenceNumber=" + licenceNumber + ", licenseExpiryDate=" + licenseExpiryDate
+				+ ", providerPracticeState=" + providerPracticeState + ", product=" + product + ", provType=" + provType
+				+ ", provEffectiveDate=" + provEffectiveDate + ", provEffectiveStatus=" + provEffectiveStatus + "]";
+	}
+
 }

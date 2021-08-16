@@ -1,0 +1,70 @@
+package com.hcsc.provider.attestation.drools.drl
+ 
+import com.hcsc.provider.attestation.model.Provider;
+import com.hcsc.provider.attestation.model.Validation;
+import static com.hcsc.provider.attestation.util.DroolsUtils.*;
+
+rule "Initial Rule"
+    dialect "mvel"
+  when
+   $provider: Provider(status == null)
+  then
+    $provider.setStatus(Validation.UNKNOWN);
+    $provider.setErrorDescription(" ");
+end
+
+rule "Tax Id Length validator"
+  dialect "mvel"
+  when
+   $provider : Provider( taxId.length() != 11)
+  then
+   $provider.setStatus(Validation.FAILED);
+   $provider.setErrorDescription($provider.getErrorDescription().concat("Tax Id length is not ELEVEN , "));
+end
+
+rule "NPI ID length validator"
+  dialect "mvel"
+  when
+   $provider : Provider( npi.length() != 10)
+  then
+   $provider.setStatus(Validation.FAILED);
+   $provider.setErrorDescription($provider.getErrorDescription().concat("NPI Id length is not TEN , "));
+end
+
+rule "Tax id field validation"
+ dialect "mvel"
+ when
+    $provider: Provider()
+    eval(ValidateDigits($provider.taxId) == false)
+  then
+   	$provider.setStatus(Validation.FAILED);
+   	$provider.setErrorDescription($provider.getErrorDescription().concat("Tax Id field is not Numeric , "));
+end
+
+rule "npi field validation"
+ dialect "mvel"
+ when
+    $provider: Provider()
+    eval(ValidateDigits($provider.npi) == false)
+  then
+   	$provider.setStatus(Validation.FAILED);
+   	$provider.setErrorDescription($provider.getErrorDescription().concat("NPI field is not Numeric , "));
+end
+
+rule "prov-speciality code"
+    dialect "mvel"
+  when
+   $provider: Provider(providerSpecialityCode != "C5")
+  then
+    $provider.setStatus(Validation.FAILED);
+    $provider.setErrorDescription($provider.getErrorDescription().concat("Provider Speciality Code is Invalid "));
+end
+
+rule "Final Rule"
+    dialect "mvel"
+  when
+   $provider: Provider(status == Validation.UNKNOWN)
+  then
+    $provider.setStatus(Validation.PASSED);
+end
+

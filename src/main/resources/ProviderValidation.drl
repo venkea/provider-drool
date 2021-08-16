@@ -4,6 +4,14 @@ import com.hcsc.provider.drools.domain.Provider;
 import com.hcsc.provider.drools.domain.Validation;
 
 
+rule "Initial Rule"
+    dialect "mvel"
+  when
+	$provider: Provider(status == null)
+  then
+    $provider.setStatus(Validation.UNKNOWN);
+end
+
 rule "Valid providerTax"
   dialect "mvel"
   when

@@ -13,15 +13,13 @@ public class StatelessProviderValidation {
 
   public static Provider execute(Provider provider) {
 
-   // Provider provider = ApplicationRepository.getProvider(provider);
-    KieContainer kieContainer = KieServices.Factory.get().getKieClasspathContainer();
-    StatelessKieSession kieSession = kieContainer.newStatelessKieSession("StatelessProviderValidation");
-    System.out.println("==== DROOLS SESSION START ==== " + kieSession);
-    kieSession.execute(provider);
-    System.out.println("==== DROOLS SESSION END ==== ");
-    System.out.println("==== PROVIDER AFTER DROOLS SESSION ==== ");
+      // List<Provider> provider = ApplicationRepository.getProvider();
+       KieContainer kieContainer = KieServices.Factory.get().getKieClasspathContainer();
+       StatelessKieSession kieSession = kieContainer.newStatelessKieSession("StatelessProviderValidation");
+       kieSession.execute(provider);
 
-    //provider.forEach(provider1 -> System.out.println(provider1.getProviderId() + " validation " + provider1.getStatus()));
-    return provider;
-  }
+       //provider.forEach(provider1 -> System.out.println(provider1.getProviderId() + " validation " + provider1.getStatus()));
+       return provider;
+
+}
 }
